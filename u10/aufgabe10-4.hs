@@ -41,10 +41,10 @@ o :: Num a => Triple a -> Triple a -> a
 o t1 t2 = sum $ tripleToList (fmap (*) t1 <*> t2)
 
 tripleAdd :: Num a => Triple a -> Triple a -> Triple a
-tripleAdd t1 t2 = tripleFromList $ tripleToList (fmap (+) t1 <*> t2)
+tripleAdd t1 t2 = fmap (+) t1 <*> t2
 
 tripleSub :: Num a => Triple a -> Triple a -> Triple a
-tripleSub t1 t2 = tripleFromList $ tripleToList (fmap (-) t1 <*> t2)
+tripleSub t1 t2 = fmap (-) t1 <*> t2
 
 -- g)
 tlength :: Floating a => Triple a -> a
